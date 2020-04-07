@@ -1,4 +1,4 @@
-mod file;
+pub mod file;
 mod utilities;
 
 mod magic_number {
