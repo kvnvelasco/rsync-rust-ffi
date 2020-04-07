@@ -32,7 +32,7 @@ impl<'a> From<&'a Delta> for &'a [u8] {
 }
 
 impl Delta {
-    pub fn delta<T: AsRef<Path>>(
+    pub fn new<T: AsRef<Path>>(
         external_file_signature: &mut Signature,
         target_file: T,
     ) -> (Self, RsyncStats) {
@@ -98,7 +98,7 @@ mod tests {
                 .expect("Unable to write tempfile");
         }
 
-        let (_delta, _stats) = Delta::delta(&mut signature, &new_path);
+        let (_delta, _stats) = Delta::new(&mut signature, &new_path);
 
         dbg!(String::from_utf8_lossy(_delta.borrow().into()));
     }

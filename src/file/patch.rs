@@ -80,7 +80,7 @@ mod tests {
                 .expect("Unable to write tempfile");
         }
 
-        let (_delta, _stats) = Delta::delta(&mut signature, &new_path);
+        let (_delta, _stats) = Delta::new(&mut signature, &new_path);
 
         let data = patch_file(path, _delta);
 
