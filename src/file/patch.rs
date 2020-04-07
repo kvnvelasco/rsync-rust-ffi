@@ -51,13 +51,12 @@ pub fn patch_file<T: AsRef<Path>>(file_to_patch: T, delta: Delta) -> Vec<u8> {
     output
 }
 
-
 #[cfg(test)]
 mod tests {
-    use std::fs::File;
-    use crate::file::signature::Signature;
     use crate::file::delta::Delta;
     use crate::file::patch::patch_file;
+    use crate::file::signature::Signature;
+    use std::fs::File;
     use std::io::Write;
 
     #[test]

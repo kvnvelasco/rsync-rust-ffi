@@ -17,7 +17,7 @@ extern "C" {
         stats: *mut RsyncStats,
     ) -> RsyncResult;
 
-    fn rs_build_hash_table(rs_signature_t: *mut SignatureImpl);
+    pub(crate) fn rs_build_hash_table(rs_signature_t: *mut SignatureImpl);
 }
 
 #[derive(Debug)]
